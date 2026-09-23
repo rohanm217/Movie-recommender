@@ -3,9 +3,9 @@ from database import get_connection
 from add_entry import add_entry
 from manage_entries import delete_entry, update_entry
 
-sl.title("WRecs")
+sl.markdown("<h1 style='text-align: center;'>WRecs</h1>", unsafe_allow_html=True)
+sl.markdown("<h2 style='text-align: center;'>Add a new title</h1>", unsafe_allow_html=True)
 
-sl.header("Add a new title")
 
 with sl.form("add_form", clear_on_submit=True):
     title = sl.text_input("Title")
