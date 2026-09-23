@@ -2,6 +2,7 @@ import streamlit as sl
 from database import get_connection
 from add_entry import add_entry
 from manage_entries import delete_entry, update_entry
+from posters import get_poster_url
 
 sl.markdown("<h1 style='text-align: center;'>WRecs</h1>", unsafe_allow_html=True)
 sl.markdown("<h2 style='text-align: center;'>Add a new title</h1>", unsafe_allow_html=True)
@@ -38,6 +39,9 @@ else:
         entry_id, title, media_type, genre, status, rating, notes = row
         with sl.container(border=True):
             sl.subheader(f"{title}  ({media_type})")
+            poster_url = get_poster_url(title, media_type)
+            if poster_url:
+                sl.image(poster_url, width=150)
             sl.write(f"**Genre:** {genre} | **Status:** {status} | **Rating:** {rating}/5")
             if notes:
                 sl.caption(notes)
