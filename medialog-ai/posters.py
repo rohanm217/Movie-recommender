@@ -11,7 +11,7 @@ def get_poster_url(title, media_type):
     # defaults anime to tv
     search_type = "movie" if media_type == "movie" else "tv"
 
-    url = f"https:/api.themoviedb.org/3/search/{search_type}"
+    url = f"https://api.themoviedb.org/3/search/{search_type}"
     params = {
         "api_key": API_KEY,
         "query": title
