@@ -3,9 +3,17 @@ from database import get_connection
 from add_entry import add_entry
 from manage_entries import delete_entry, update_entry
 from posters import get_poster_url
+from recommender import get_recommendations
 
 sl.markdown("<h1 style='text-align: center;'>WRecs</h1>", unsafe_allow_html=True)
 sl.markdown("<h2 style='text-align: center;'>Add a new title</h1>", unsafe_allow_html=True)
+
+sl.header("Get Recommendations")
+
+if sl.button("Recommend me something"):
+    with sl.spinner("Fetching Recommendations..."):
+        recommendations = get_recommendations()
+    sl.markdown(recommendations)
 
 
 with sl.form("add_form", clear_on_submit=True):
