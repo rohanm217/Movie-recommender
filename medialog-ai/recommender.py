@@ -43,7 +43,7 @@ def get_recommendations():
 Here is someone's watch history:
 {history}
 
-Based on their genres, ratings, and notes, recommend 5 new movies, shows, or anime
+Based on their genres, ratings, and notes, recommend exactly 6 new movies, shows, or anime
 they haven't listed above.
 
 Respond with ONLY a JSON array, no other text, no explanation, no markdown fences.
